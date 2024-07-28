@@ -50,6 +50,11 @@ limitations under the License.
 To use in Observable,
 
 ```javascript
+dnannsumkbn = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-dnannsumkbn@umd/browser.js' )
+```
+The previous example will load the latest bundled code from the umd branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/blas-ext-base-dnannsumkbn/tags). For example,
+
+```javascript
 dnannsumkbn = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-dnannsumkbn@v0.2.2-umd/browser.js' )
 ```
 
@@ -62,7 +67,7 @@ var dnannsumkbn = require( 'path/to/vendor/umd/blas-ext-base-dnannsumkbn/index.j
 To include the bundle in a webpage,
 
 ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-dnannsumkbn@v0.2.2-umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-dnannsumkbn@umd/browser.js"></script>
 ```
 
 If no recognized module system is present, access bundle contents via the global scope:
@@ -185,7 +190,7 @@ var v = dnannsumkbn.ndarray( 4, x, 2, 1, out, 2, 1 );
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform@umd/browser.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-filled-by@umd/browser.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-dnannsumkbn@v0.2.2-umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-dnannsumkbn@umd/browser.js"></script>
 <script type="text/javascript">
 (function () {
 
