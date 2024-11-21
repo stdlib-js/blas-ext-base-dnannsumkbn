@@ -1,0 +1,4 @@
+// Copyright (c) 2024 The Stdlib Authors. License is Apache-2.0: http://www.apache.org/licenses/LICENSE-2.0
+/// <reference types="./index.d.ts" />
+import s from"https://cdn.jsdelivr.net/gh/stdlib-js/utils-define-nonenumerable-read-only-property@v0.2.1-esm/index.mjs";import e from"https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-stride2offset@v0.1.0-esm/index.mjs";import t from"https://cdn.jsdelivr.net/gh/stdlib-js/math-base-assert-is-nan@v0.2.2-esm/index.mjs";import r from"https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-abs@v0.2.2-esm/index.mjs";function n(s,e,n,i,d,a,m){var o,f,l,j,p,h,b;if(o=0,s<=0)return d[m]=o,d[m+a]=0,d;if(f=i,0===n)return t(e[f])?(d[m]=o,d[m+a]=0,d):(d[m]=e[f]*s,d[m+a]=s,d);for(p=0,h=0,b=0;b<s;b++)l=e[f],!1===t(l)&&(j=o+l,r(o)>=r(l)?p+=o-j+l:p+=l-j+o,o=j,h+=1),f+=n;return d[m]=o+p,d[m+a]=h,d}function i(s,t,r,i,d){return n(s,t,r,e(s,r),i,d,e(2,d))}s(i,"ndarray",n);export{i as default,n as ndarray};
+//# sourceMappingURL=index.mjs.map
