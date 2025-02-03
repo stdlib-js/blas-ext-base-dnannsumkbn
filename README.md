@@ -41,14 +41,32 @@ limitations under the License.
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/blas-ext-base-dnannsumkbn
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import dnannsumkbn from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-dnannsumkbn@deno/mod.js';
+var dnannsumkbn = require( '@stdlib/blas-ext-base-dnannsumkbn' );
 ```
 
 #### dnannsumkbn( N, x, strideX, out, strideOut )
@@ -56,7 +74,7 @@ import dnannsumkbn from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-dna
 Computes the sum of double-precision floating-point strided array elements, ignoring `NaN` values and using an improved Kahan–Babuška algorithm.
 
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@deno/mod.js';
+var Float64Array = require( '@stdlib/array-float64' );
 
 var x = new Float64Array( [ 1.0, -2.0, NaN, 2.0 ] );
 var out = new Float64Array( 2 );
@@ -76,7 +94,7 @@ The function has the following parameters:
 The `N` and stride parameters determine which elements are accessed at runtime. For example, to compute the sum of every other element in `x`,
 
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@deno/mod.js';
+var Float64Array = require( '@stdlib/array-float64' );
 
 var x = new Float64Array( [ 1.0, 2.0, NaN, -7.0, NaN, 3.0, 4.0, 2.0 ] );
 var out = new Float64Array( 2 );
@@ -90,7 +108,7 @@ Note that indexing is relative to the first index. To introduce an offset, use [
 <!-- eslint-disable stdlib/capitalized-comments -->
 
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@deno/mod.js';
+var Float64Array = require( '@stdlib/array-float64' );
 
 var x0 = new Float64Array( [ 2.0, 1.0, NaN, -2.0, -2.0, 2.0, 3.0, 4.0 ] );
 var x1 = new Float64Array( x0.buffer, x0.BYTES_PER_ELEMENT*1 ); // start at 2nd element
@@ -107,7 +125,7 @@ var v = dnannsumkbn( 4, x1, 2, out1, 1 );
 Computes the sum of double-precision floating-point strided array elements, ignoring `NaN` values and using an improved Kahan–Babuška algorithm and alternative indexing semantics.
 
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@deno/mod.js';
+var Float64Array = require( '@stdlib/array-float64' );
 
 var x = new Float64Array( [ 1.0, -2.0, NaN, 2.0 ] );
 var out = new Float64Array( 2 );
@@ -124,7 +142,7 @@ The function has the following additional parameters:
 While [`typed array`][mdn-typed-array] views mandate a view offset based on the underlying buffer, offset parameters support indexing semantics based on starting indices. For example, to calculate the sum of every other element starting from the second element:
 
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@deno/mod.js';
+var Float64Array = require( '@stdlib/array-float64' );
 
 var x = new Float64Array( [ 2.0, 1.0, NaN, -2.0, -2.0, 2.0, 3.0, 4.0 ] );
 var out = new Float64Array( 4 );
@@ -154,11 +172,11 @@ var v = dnannsumkbn.ndarray( 4, x, 2, 1, out, 2, 1 );
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-import bernoulli from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-bernoulli@deno/mod.js';
-import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform@deno/mod.js';
-import filledarrayBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-filled-by@deno/mod.js';
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@deno/mod.js';
-import dnannsumkbn from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-dnannsumkbn@deno/mod.js';
+var bernoulli = require( '@stdlib/random-base-bernoulli' );
+var discreteUniform = require( '@stdlib/random-base-discrete-uniform' );
+var filledarrayBy = require( '@stdlib/array-filled-by' );
+var Float64Array = require( '@stdlib/array-float64' );
+var dnannsumkbn = require( '@stdlib/blas-ext-base-dnannsumkbn' );
 
 function rand() {
     if ( bernoulli( 0.8 ) > 0 ) {
@@ -181,7 +199,133 @@ console.log( out );
 
 <!-- C interface documentation. -->
 
+* * *
 
+<section class="c">
+
+## C APIs
+
+<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
+
+<section class="intro">
+
+</section>
+
+<!-- /.intro -->
+
+<!-- C usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```c
+#include "stdlib/blas/ext/base/dnannsumkbn.h"
+```
+
+#### stdlib_strided_dnannsumkbn( N, \*X, strideX, \*n )
+
+Computes the sum of double-precision floating-point strided array elements, ignoring `NaN` values and using an improved Kahan–Babuška algorithm.
+
+```c
+#include "stdlib/blas/base/shared.h"
+
+const double x[] = { 1.0, 2.0, 0.0/0.0, 4.0 };
+CBLAS_INT n = 0;
+
+double v = stdlib_strided_dnannsumkbn( 4, x, 1, &n );
+// returns 7.0
+```
+
+The function accepts the following arguments:
+
+-   **N**: `[in] CBLAS_INT` number of indexed elements.
+-   **X**: `[in] double*` input array.
+-   **strideX**: `[in] CBLAS_INT` stride length for `X`.
+-   **n**: `[out] CBLAS_INT*` pointer for storing the number of non-NaN elements.
+
+```c
+double stdlib_strided_dnannsumkbn( const CBLAS_INT N, const double *X, const CBLAS_INT strideX, CBLAS_INT *n );
+```
+
+#### stdlib_strided_dnannsumkbn_ndarray( N, \*X, strideX, offsetX, \*n )
+
+Computes the sum of double-precision floating-point strided array elements, ignoring `NaN` values and using an improved Kahan–Babuška algorithm and alternative indexing semantics.
+
+```c
+#include "stdlib/blas/base/shared.h"
+
+const double x[] = { 1.0, 2.0, 0.0/0.0, 4.0 };
+CBLAS_INT n = 0; 
+
+double v = stdlib_strided_dnannsumkbn_ndarray( 4, x, 1, 0, &n );
+// returns 7.0
+```
+
+The function accepts the following arguments:
+
+-   **N**: `[in] CBLAS_INT` number of indexed elements.
+-   **X**: `[in] double*` input array.
+-   **strideX**: `[in] CBLAS_INT` stride length for `X`.
+-   **offsetX**: `[in] CBLAS_INT` starting index for `X`.
+-   **n**: `[out] CBLAS_INT*` pointer for storing the number of non-NaN elements.
+
+```c
+double stdlib_strided_dnannsumkbn_ndarray( const CBLAS_INT N, const double *X, const CBLAS_INT strideX, const CBLAS_INT offsetX, CBLAS_INT *n );
+```
+
+</section>
+
+<!-- /.usage -->
+
+<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+</section>
+
+<!-- /.notes -->
+
+<!-- C API usage examples. -->
+
+<section class="examples">
+
+### Examples
+
+```c
+#include "stdlib/blas/ext/base/dnannsumkbn.h"
+#include "stdlib/blase/base/shared.h"
+#include <stdio.h>
+
+int main( void ) {
+    // Create a strided array:
+    const double x[] = { 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 0.0/0.0, 0.0/0.0 };
+
+    // Specify the number of elements:
+    const int N = 5;
+
+    // Specify the stride length:
+    const int strideX = 2;
+
+    // Initialize a variable for storing the number of non-NaN elements:
+    CBLAS_INT n = 0;
+
+    // Compute the sum:
+    double v = stdlib_strided_dnannsumkbn( N, x, strideX, &n );
+
+    // Print the result:
+    printf( "sum: %lf\n", v );
+    printf( "n: %"CBLAS_IFMT"\n", n );
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.c -->
 
 <section class="references">
 
@@ -221,7 +365,7 @@ console.log( out );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -238,7 +382,7 @@ See [LICENSE][stdlib-license].
 
 ## Copyright
 
-Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
+Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 </section>
 
@@ -284,7 +428,7 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/blas-ext-base-dnannsumkbn/main/LICENSE
 
-[@stdlib/array/float64]: https://github.com/stdlib-js/array-float64/tree/deno
+[@stdlib/array/float64]: https://github.com/stdlib-js/array-float64
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
@@ -292,17 +436,17 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/blas/ext/base/dnannsum]: https://github.com/stdlib-js/blas-ext-base-dnannsum/tree/deno
+[@stdlib/blas/ext/base/dnannsum]: https://github.com/stdlib-js/blas-ext-base-dnannsum
 
-[@stdlib/blas/ext/base/dnannsumkbn2]: https://github.com/stdlib-js/blas-ext-base-dnannsumkbn2/tree/deno
+[@stdlib/blas/ext/base/dnannsumkbn2]: https://github.com/stdlib-js/blas-ext-base-dnannsumkbn2
 
-[@stdlib/blas/ext/base/dnannsumors]: https://github.com/stdlib-js/blas-ext-base-dnannsumors/tree/deno
+[@stdlib/blas/ext/base/dnannsumors]: https://github.com/stdlib-js/blas-ext-base-dnannsumors
 
-[@stdlib/blas/ext/base/dnannsumpw]: https://github.com/stdlib-js/blas-ext-base-dnannsumpw/tree/deno
+[@stdlib/blas/ext/base/dnannsumpw]: https://github.com/stdlib-js/blas-ext-base-dnannsumpw
 
-[@stdlib/blas/ext/base/dsumkbn]: https://github.com/stdlib-js/blas-ext-base-dsumkbn/tree/deno
+[@stdlib/blas/ext/base/dsumkbn]: https://github.com/stdlib-js/blas-ext-base-dsumkbn
 
-[@stdlib/blas/ext/base/gnannsumkbn]: https://github.com/stdlib-js/blas-ext-base-gnannsumkbn/tree/deno
+[@stdlib/blas/ext/base/gnannsumkbn]: https://github.com/stdlib-js/blas-ext-base-gnannsumkbn
 
 <!-- </related-links> -->
 
