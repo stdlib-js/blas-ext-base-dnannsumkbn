@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-03-17)
+## Unreleased (2025-09-10)
 
 <section class="features">
 
@@ -15,6 +15,16 @@
 </section>
 
 <!-- /.features -->
+
+<section class="bug-fixes">
+
+### Bug Fixes
+
+-   [`950141e`](https://github.com/stdlib-js/stdlib/commit/950141ee601eec31ba21d377133fe8b80c153f55) - update implementation to preserve signed zeros
+
+</section>
+
+<!-- /.bug-fixes -->
 
 <section class="issues">
 
@@ -34,6 +44,11 @@ This release closes the following issue:
 
 <details>
 
+-   [`82be305`](https://github.com/stdlib-js/stdlib/commit/82be305dfecc75ac71e18dbed841aa6f8022e7be) - **docs:** clean-up TSDoc examples _(by Philipp Burckhardt)_
+-   [`8a0618b`](https://github.com/stdlib-js/stdlib/commit/8a0618bf4e79916cd2e32e9159e0299b7c1bcf34) - **style:** fix indentation in JSON files _(by Philipp Burckhardt)_
+-   [`c221279`](https://github.com/stdlib-js/stdlib/commit/c2212790b0118b7787b5e292244b4364c08ea05a) - **docs:** minor clean-up _(by Philipp Burckhardt)_
+-   [`52b14da`](https://github.com/stdlib-js/stdlib/commit/52b14da1c02459b2c77949aa11adeb683a217b83) - **refactor:** use alias to reduce visual noise _(by Athan Reines)_
+-   [`950141e`](https://github.com/stdlib-js/stdlib/commit/950141ee601eec31ba21d377133fe8b80c153f55) - **fix:** update implementation to preserve signed zeros _(by Athan Reines)_
 -   [`b5cca80`](https://github.com/stdlib-js/stdlib/commit/b5cca80877dfd53f4a40e3e4c4e0ae09e326f8cd) - **docs:** update `blas/ext/base/dnannsumkbn` to follow current project conventions [(#5187)](https://github.com/stdlib-js/stdlib/pull/5187) _(by Muhammad Haris)_
 -   [`62364f6`](https://github.com/stdlib-js/stdlib/commit/62364f62ea823a3b52c2ad25660ecd80c71f8f36) - **style:** fix C comment alignment _(by Philipp Burckhardt)_
 -   [`243fe3d`](https://github.com/stdlib-js/stdlib/commit/243fe3d7fb26729eba74c461daab5b89e9c66c32) - **test:** add tests to `blas/ext/base/dnannsumkbn` [(#3218)](https://github.com/stdlib-js/stdlib/pull/3218) _(by Saurabh Singh)_
@@ -49,8 +64,9 @@ This release closes the following issue:
 
 ### Contributors
 
-A total of 3 people contributed to this release. Thank you to the following contributors:
+A total of 4 people contributed to this release. Thank you to the following contributors:
 
+-   Athan Reines
 -   Muhammad Haris
 -   Philipp Burckhardt
 -   Saurabh Singh
