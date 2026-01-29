@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/blas-ext-base-dnannsumkbn",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Calculate the sum of double-precision floating-point strided array elements, ignoring NaN values and using an improved Kahan–Babuška algorithm.",
   "license": "Apache-2.0",
   "author": {
@@ -48,10 +48,10 @@
     "@stdlib/napi-argv": "^0.2.2",
     "@stdlib/napi-argv-int64": "^0.2.2",
     "@stdlib/napi-argv-strided-float64array": "^0.2.2",
-    "@stdlib/napi-export": "^0.2.2",
+    "@stdlib/napi-export": "^0.3.0",
     "@stdlib/strided-base-stride2offset": "^0.1.0",
     "@stdlib/utils-define-nonenumerable-read-only-property": "^0.2.2",
-    "@stdlib/utils-library-manifest": "^0.2.2",
+    "@stdlib/utils-library-manifest": "^0.2.3",
     "@stdlib/utils-try-require": "^0.2.2"
   },
   "devDependencies": {
@@ -104,7 +104,6 @@
     "double",
     "float64array"
   ],
-  "__stdlib__": {},
   "funding": {
     "type": "opencollective",
     "url": "https://opencollective.com/stdlib"
